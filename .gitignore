@@ -1,0 +1,6 @@
+/packages/*
+!packages/repositories.config
+/**/bin/
+/**/obj/
+/**/*.suo
+/**/*.csproj.user
