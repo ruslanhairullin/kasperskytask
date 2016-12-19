@@ -35,7 +35,7 @@ namespace KasperskyTask
         {
             lock (_locker)
             {
-                while (_queue.Count == 0)                
+                while (_queue.Count == 0)
                     Monitor.Wait(_locker);
                 
                 try
@@ -44,9 +44,10 @@ namespace KasperskyTask
                     Console.WriteLine("In pop {0}", item);
                     return item;
                 }
-                catch (Exception ex)
+                catch (InvalidOperationException ex)
                 {
                     Console.WriteLine(ex);
+                    //Handle of error
                 }
 
                 return default(T);
